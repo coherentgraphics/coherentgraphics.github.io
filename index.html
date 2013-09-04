@@ -68,6 +68,39 @@
 <pre><code>cpdf in.pdf 1-3,12-end -o out.pdf
 </code></pre>
 
+<p>Merge some files together:</p>
+
+<pre><code>cpdf one.pdf two.pdf three.pdf -o merged.pdf
+</code></pre>
+
+<p>Split a file into single-page files <code>page001.pdf</code>, `page002.pdf' etc:</p>
+
+<pre><code>cpdf -split in.pdf -o page%%%.pdf
+</code></pre>
+
+<p>Encrypt a file with 128 bit AES encryption with an owner password but blank user password:</p>
+
+<pre><code>cpdf -encrypt AES128 "pass" "" in.pdf -o out.pdf
+</code></pre>
+
+<p>Output some information about a file:</p>
+
+<pre><code>cpdf -info file.pdf
+Encryption: Not encrypted
+Permissions: 
+Linearized: true
+Version: 1.4
+Pages: 8
+Title: catalogueproduit-UK.qxd
+Author: James Peterson
+Subject: 
+Keywords: 
+Creator: QuarkXPress: pictwpstops filter 1.0
+Producer: Acrobat Distiller 6.0 for Macintosh
+Created: D:20060926213913+02'00'
+Modified: D:20060926213913+02'00'
+</code></pre>
+
 <h3>
 <a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h3>
 
