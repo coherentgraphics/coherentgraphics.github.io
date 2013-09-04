@@ -86,6 +86,7 @@
 <p>Output some information about a file:</p>
 
 <pre><code>cpdf -info file.pdf
+
 Encryption: Not encrypted
 Permissions: 
 Linearized: true
@@ -99,6 +100,56 @@ Creator: QuarkXPress: pictwpstops filter 1.0
 Producer: Acrobat Distiller 6.0 for Macintosh
 Created: D:20060926213913+02'00'
 Modified: D:20060926213913+02'00'
+</code></pre>
+
+<p>Output information about each page:</p>
+
+<pre><code>cpdf -page-info file.pdf
+
+Page 1:
+MediaBox: 0.000000 0.000000 768.000000 1366.000000
+CropBox: 
+BleedBox: 0.000000 0.000000 768.000000 1366.000000
+TrimBox: 0.000000 0.000000 768.000000 1366.000000
+ArtBox: 0.000000 0.000000 768.000000 1366.000000
+Rotation: 0
+Page 2:
+MediaBox: 0.000000 0.000000 768.000000 1366.000000
+CropBox: 
+BleedBox: 0.000000 0.000000 768.000000 1366.000000
+TrimBox: 0.000000 0.000000 768.000000 1366.000000
+ArtBox: 0.000000 0.000000 768.000000 1366.000000
+Rotation: 0
+</code></pre>
+
+<p>Scale pages to A4 paper:</p>
+
+<pre><code>cpdf -scale-to-fit a4portrait in.pdf -o out.pdf
+</code></pre>
+
+<p>Crop a file:</p>
+
+<pre><code>cpdf -crop "20mm 20mm 400mm 800mm" in.pdf -o out.pdf 
+</code></pre>
+
+<p>Add some text with page numbers:</p>
+
+<pre><code>cpdf -add-text "Page %Page of %EndPage" -top 100pt -font "Times-Roman" -font-size 20 in.pdf -o out.pdf
+</code></pre>
+
+<p>Stamp one PDF file over each page of another:</p>
+
+<pre><code>cpdf -stamp-on logo.pdf in.pdf -o out.pdf
+</code></pre>
+
+<p>Attach a file to page 5:</p>
+
+<pre><code>cpdf -attach-file sheet.xls -to-page 5 in.pdf -o out.pdf
+</code></pre>
+
+<p>Combine several commands together using AND: flip a file vertically and stamp text, then encrypt.</p>
+
+<pre><code>cpdf in.pdf -vflip AND -add-text "Page %Page" AND -encrypt 128bit owner "" -o out.pdf
 </code></pre>
 
 <h3>
