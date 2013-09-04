@@ -1,4 +1,1 @@
-coherentgraphics.github.io
-==========================
-
-Public Website
+Coherent PDF Command Line Tools Community Release
