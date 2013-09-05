@@ -161,6 +161,16 @@ Rotation: 0
 
 <h3>
 <a name="faqs" class="anchor" href="#faqs"><span class="octicon octicon-link"></span></a>FAQs</h3>
+
+<h5>
+<a name="q-the-cpdf-program-prints-a-message-about-its-non-commercial-status-every-time-i-run-it-how-can-i-stop-that" class="anchor" href="#q-the-cpdf-program-prints-a-message-about-its-non-commercial-status-every-time-i-run-it-how-can-i-stop-that"><span class="octicon octicon-link"></span></a>Q. The cpdf program prints a message about its non-commercial status every time I run it. How can I stop that?</h5>
+
+<p>A. The message is printed to standard error, so if you're using cpdf in an automated system, you can just redirect standard error to null. On Linux and OS X this is done by adding <code>2&gt;/dev/null</code> to the end of the command. On Windows, use <code>2&gt;nul</code> instead.</p>
+
+<h5>
+<a name="q-my-command-works-but-fails-when-i-put-it-in-a-windows-batch-file" class="anchor" href="#q-my-command-works-but-fails-when-i-put-it-in-a-windows-batch-file"><span class="octicon octicon-link"></span></a>Q. My command works, but fails when I put it in a Windows Batch file.</h5>
+
+<p>A. Some cpdf commands use <code>%</code> as a special character. Use <code>%%</code> instead.</p>
       </section>
     </div>
 
