@@ -39,7 +39,7 @@
 <li>Add or remove attachments</li>
 </ul><p>The tools have been available commercially since 2007, and are widely used in industry and government. The same technology is used in the <a href="http://www.coherentpdf.com/proview.html">Proview PDF Editor</a> for the mac.</p>
 
-<p>Now we're releasing them for free, under a <a href="https://github.com/coherentgraphics/cpdf-binaries/blob/master/LICENSE">special not-for-commercial-use license</a> If you like the tools and want to use them commercially, or need support, licenses are available from <a href="http://www.coherentpdf.com">Coherent Graphics Ltd</a>. If you're still not sure if you need a license, <a href="contact@coherentgraphics.co.uk">ask us</a>. </p>
+<p>Now we're releasing them for free, under a <a href="https://github.com/coherentgraphics/cpdf-binaries/blob/master/LICENSE">special not-for-commercial-use license</a> If you like the tools and want to use them commercially, or need support, licenses are available from <a href="http://www.coherentpdf.com">Coherent Graphics Ltd</a>. If you're still not sure if you need a license, <a href="mailto:contact@coherentgraphics.co.uk">ask us</a>. </p>
 
 <h3>
 <a name="download-binaries-now-for-windows-mac-or-linux" class="anchor" href="#download-binaries-now-for-windows-mac-or-linux"><span class="octicon octicon-link"></span></a>Download binaries now for Windows, Mac, or Linux</h3>
@@ -73,14 +73,14 @@
 <pre><code>cpdf one.pdf two.pdf three.pdf -o merged.pdf
 </code></pre>
 
-<p>Split a file into single-page files <code>page001.pdf</code>, `page002.pdf' etc:</p>
+<p>Split a file into single-page files <code>page001.pdf</code>, <code>page002.pdf</code> etc:</p>
 
 <pre><code>cpdf -split in.pdf -o page%%%.pdf
 </code></pre>
 
 <p>Encrypt a file with 128 bit AES encryption with an owner password but blank user password:</p>
 
-<pre><code>cpdf -encrypt AES128 "pass" "" in.pdf -o out.pdf
+<pre><code>cpdf -encrypt AES "pass" "" in.pdf -o out.pdf
 </code></pre>
 
 <p>Output some information about a file:</p>
@@ -129,7 +129,7 @@ Rotation: 0
 
 <p>Crop a file:</p>
 
-<pre><code>cpdf -crop "20mm 20mm 400mm 800mm" in.pdf -o out.pdf 
+<pre><code>cpdf -crop "20mm 20mm 300mm 300mm" in.pdf -o out.pdf 
 </code></pre>
 
 <p>Add some text with page numbers:</p>
@@ -155,7 +155,7 @@ Rotation: 0
 <h3>
 <a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h3>
 
-<p>If you discover a bug, you can <a href="https://github.com/johnwhitington/cpdf-source/issues">raise an issue in our issue tracker</a>, or <a href="contact@coherentgraphics.co.uk">email for support</a>.</p>
+<p>If you discover a bug, you can <a href="https://github.com/johnwhitington/cpdf-source/issues">raise an issue in our issue tracker</a>, or <a href="mailto:contact@coherentgraphics.co.uk">email for support</a>.</p>
 
 <p>Please note, though, that we prioritise support for paying customers.</p>
 
@@ -165,12 +165,12 @@ Rotation: 0
 <h5>
 <a name="q-the-cpdf-program-prints-a-message-about-its-non-commercial-status-every-time-i-run-it-how-can-i-stop-that" class="anchor" href="#q-the-cpdf-program-prints-a-message-about-its-non-commercial-status-every-time-i-run-it-how-can-i-stop-that"><span class="octicon octicon-link"></span></a>Q. The cpdf program prints a message about its non-commercial status every time I run it. How can I stop that?</h5>
 
-<p>A. The message is printed to standard error, so if you're using cpdf in an automated system, you can just redirect standard error to null. On Linux and OS X this is done by adding <code>2&gt;/dev/null</code> to the end of the command. On Windows, use <code>2&gt;nul</code> instead.</p>
+<p>A. The message is printed to standard error, so if you're using <code>cpdf</code> in an automated system, you can just redirect standard error to null. On Linux and OS X this is done by adding <code>2&gt;/dev/null</code> to the end of the command. On Windows, use <code>2&gt;nul</code> instead.</p>
 
 <h5>
 <a name="q-my-command-works-but-fails-when-i-put-it-in-a-windows-batch-file" class="anchor" href="#q-my-command-works-but-fails-when-i-put-it-in-a-windows-batch-file"><span class="octicon octicon-link"></span></a>Q. My command works, but fails when I put it in a Windows Batch file.</h5>
 
-<p>A. Some cpdf commands use <code>%</code> as a special character. Use <code>%%</code> instead.</p>
+<p>A. Some <code>cpdf</code> commands use <code>%</code> as a special character. Use <code>%%</code> instead.</p>
       </section>
     </div>
 
