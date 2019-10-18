@@ -40,11 +40,11 @@
 <li>Losslessly compress PDF files</li>
 </ul>
 
-<p>The <code>cpdf</code> tool has been available commercially since 2007, and is widely used in industry and government. The same technology is used in the <a href="http://www.coherentpdf.com/proview.html">Proview PDF Editor</a> for the mac.</p>
+<p>The <code>cpdf</code> tool has been available commercially since 2007, and is widely used in industry and government. </p>
 
-<p>Now we're releasing them for free, under a <a
+<p>Now we're releasing two tools for free, the main program under a <a
   href="https://github.com/coherentgraphics/cpdf-binaries/blob/master/LICENSE">special
-  not-for-commercial-use license</a> <em>If you like the tools and want to use them commercially, or need support, licenses are available from <a href="http://www.coherentpdf.com">Coherent Graphics Ltd</a>. Commercial use involves anything other than private, personal use. Charities and
+  not-for-commercial-use license</a>, and a lossless PDF squeezer under the LGPL. <em>If you like the tools and want to use them commercially, or need support, licenses are available from <a href="http://www.coherentpdf.com">Coherent Graphics Ltd</a>. Commercial use involves anything other than private, personal use. Charities and
 educational institutions still require a license, but one may be obtained at
 greatly reduced cost - <a href="mailto:contact@coherentgraphics.co.uk">ask
   us</a>. If you're still not sure if you need a license, <a
@@ -56,17 +56,18 @@ greatly reduced cost - <a href="mailto:contact@coherentgraphics.co.uk">ask
 
 <p>Pre-built binaries are available for Windows, Mac OS 10.6 and later, Linux 32 bit Intel and Linux 64 bit intel.</p>
 
-<p><a href="https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip">Download pre-built tools now</a></p>
+<p><a href="https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip">Download pre-built cpdf tool</a></p>
+<p><a href="https://github.com/coherentgraphics/cpdfsqueeze-binaries/archive/master.zip">Download pre-built PDF squeezer tool</a></p>
 
 <h3>
 <a id="build-from-source" class="anchor" href="#build-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build from source</h3>
 
-<p>Look at the <a href="https://github.com/johnwhitington/cpdf-source">source repository</a> README for details. You'll need to install the <a href="http://www.ocaml.org/">OCaml</a> toolchain, and a couple of simple dependencies, but it's simple to build.</p>
+<p>Look at the <a href="https://github.com/johnwhitington/cpdf-source">source repository for cpdf</a>, or <a href="https://github.com/johnwhitington/cpdfsqueeze">for the PDF squeezer</a>. You'll need to install the <a href="https://www.ocaml.org/">OCaml</a> toolchain, and a couple of simple dependencies, but it's simple to build.</p>
 
 <h3>
 <a id="user-manual" class="anchor" href="#user-manual" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Manual</h3>
 
-<p>A comprehensive user manual can be found as a <a href="http://www.coherentpdf.com/cpdfmanual.pdf">PDF document</a>, or <a href="http://www.coherentpdf.com/cpdfmanual/">browsable online</a>. A paper copy can be obtained from <a href="https://www.amazon.com/Coherent-PDF-Command-Line-Tools/dp/0957671148/">Amazon</a> for $9.99.</p>
+<p>A comprehensive user manual for the PDF tools can be found as a <a href="http://www.coherentpdf.com/cpdfmanual.pdf">PDF document</a>, or <a href="http://www.coherentpdf.com/cpdfmanual/cpdfmanual.html">browsable online</a>. A paper copy can be obtained from <a href="https://www.amazon.com/Coherent-PDF-Command-Line-Tools/dp/0957671148/">Amazon</a> for $9.99.</p>
 
 <h3>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
@@ -165,6 +166,10 @@ Rotation: 0
 <p>Compress a file without loss of information:</p>
 
 <pre><code>cpdf -squeeze in.pdf -o out.pdf
+</code></pre>
+
+<p>Or, using the standalone PDF squeezer:</p>
+<pre><code>cpdfsqueeze in.pdf out.pdf
 </code></pre>
 
 <h3>
