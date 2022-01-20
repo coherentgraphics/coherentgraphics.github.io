@@ -60,6 +60,8 @@ greatly reduced cost - <a href="mailto:contact@coherentgraphics.co.uk">ask
 <p><a href="https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip">Download pre-built cpdf command line tool</a></p>
 <p><a href="https://github.com/coherentgraphics/cpdflib-binary/archive/master.zip">Download pre-built C/Python API static and shared libraries</a></p>
 
+<p>To install the python library, in addition to the DLLs, you will need to run <code>pip install pycpdflib</code>.</p>
+        
 <h3>
 <a id="build-from-source" class="anchor" href="#build-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build from source</h3>
 
@@ -173,7 +175,7 @@ Rotation: 0
 <a id="cexamples" class="anchor" href="#cexamples" aria-hidden="true"><span class="octicon octicon-link"></span></a>C API example</h3>
 <h3>
 
-<pre><code>#include <stdbool.h>
+<pre><code>#include &lt;stdbool.h&gt;
 #include "cpdflibwrapper.h"
 
 int main (int argc, char ** argv)
@@ -214,31 +216,28 @@ int main (int argc, char ** argv)
 
 <pre><code>#Merge example
 import sys
-sys.path.insert(0,'..')
-import pycpdf
+import pycpdflib
 
 # DLL loading depends on your own platform. These are the author's settings.
 if sys.platform.startswith('darwin'):
-    pycpdf.loadDLL("/Users/john/repos/python-libcpdf/libpycpdf.so")
+    pycpdflib.loadDLL("/Users/john/repos/python-libcpdf/libpycpdf.so")
 elif sys.platform.startswith('linux'):
-    pycpdf.loadDLL("../libpycpdf.so")
+    pycpdflib.loadDLL("../libpycpdf.so")
 elif sys.platform.startswith('win32') or sys.platform.startswith('cygwin'):
     os.add_dll_directory("C:\\\\OCaml64/home/JohnWhitington/python-libcpdf/")
-    pycpdf.loadDLL("libpycpdf.dll")
-
-pycpdf.startup()
+    pycpdflib.loadDLL("libpycpdf.dll")
 
 #We will take the input hello.pdf and repeat it three times
-mergepdf = pycpdf.fromFile('../hello.pdf', '')
+mergepdf = pycpdflib.fromFile('hello.pdf', '')
 
 #The list of PDFs to merge
 pdfs = [mergepdf, mergepdf, mergepdf]
 
 #Merge them
-merged = pycpdf.mergeSimple(pdfs)
+merged = pycpdflib.mergeSimple(pdfs)
 
 #Write output
-pycpdf.toFile(merged, 'merged.pdf', False, False)</code></pre>
+pycpdflib.toFile(merged, 'merged.pdf', False, False)</code></pre>
 
 <a id="support" class="anchor" href="#support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support</h3>
 
